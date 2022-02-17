@@ -1,5 +1,13 @@
 package core;
 
+/* Toda classe, queiramos ou não, possui Object como sua superclasse
+ * A Declaração public class Pessoa é uma forma "condensada/resumida" de se explicitar o seguinte
+ * public class Pessoa extends Object
+ * Dessa forma, Object possui um construtor (sem parâmetros). Este construtor é invocado
+ * pelo construtor da classe que criamos através da 1a linha, chamando super()
+ * (no fundo é o construtor da classe pai) 
+ */
+
 public class Pessoa {
 	protected String nome;
 	protected String email;

@@ -1,19 +1,20 @@
+package br.com.biancacorp.cartao.core;
 
 public class CartaoPrePago {
 
-		private String numeroCartao;
-		private String nomeTitular;
-		private int anoValidade;
-		private int mesValidade;
-		private double saldo;
+		protected String numeroCartao;
+		protected String nomeTitular;
+		protected int anoValidade;
+		protected int mesValidade;
+		protected double saldo;
 
-		public CartaoPrePago(String numeroCartao, String nomeTitular, int anoValidade, int mesValidade) {
+		public CartaoPrePago(String numeroCartao, String nomeTitular, int anoValidade, int mesValidade, double saldo) {
 			super();
 			this.numeroCartao = numeroCartao;
 			this.nomeTitular = nomeTitular;
 			this.anoValidade = anoValidade;
 			this.mesValidade = mesValidade;
-			this.saldo = 0.00;
+			this.saldo = saldo;
 		}
 		
 		
@@ -59,12 +60,14 @@ public class CartaoPrePago {
 			return false;
 		}
 		
-		public String dadosCartao() {
-			String msg = "Número cartão: " + numeroCartao + "\nTitular: " + nomeTitular + 
-					"\nValidade: " + anoValidade + "/" + mesValidade + "\n";
-			msg = msg + String.format("Saldo: R$ %.2f", saldo);
-			return msg;
+
+		
+		@Override
+		public String toString() {
+			return "Número cartão: " + numeroCartao + "\nTitular: " + nomeTitular + 
+					"\nValidade: " + anoValidade + "/" + mesValidade + "\n" + String.format("Saldo: R$ %.2f\n", saldo);
 		}
+		
 		
 		
 	

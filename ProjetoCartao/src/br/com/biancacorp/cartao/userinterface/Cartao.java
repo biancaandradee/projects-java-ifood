@@ -1,4 +1,7 @@
+package br.com.biancacorp.cartao.userinterface;
 import java.util.Scanner;
+
+import br.com.biancacorp.cartao.core.CartaoPrePago;
 
 public class Cartao {
 	public static void main(String[] args) {
@@ -34,7 +37,7 @@ public class Cartao {
 				System.out.println("Seu cartão: " + c.getNumeroCartao() + " Val: " + c.getMesValidade() + "/"
 						+ c.getAnoValidade());
 				System.out.println("Titular: " + c.getNomeTitular());
-				System.out.printf("Saldo: R$ %.2f", c.getSaldo());
+				System.out.printf("Saldo: R$ %.2f\n", c.getSaldo());
 				break;
 			case 0:
 				System.out.println("Obrigado pelo preferência!");
@@ -58,8 +61,11 @@ public class Cartao {
 
 		System.out.println(c.dadosCartao());
 
-		sc.close();
+		
 
+		
+		
+		sc.close();
 	}
 
 }
