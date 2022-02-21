@@ -38,7 +38,7 @@ public class Banco {
 		System.out.println(ce.exibirInfo());
 		ce.debitar(200);
 		System.out.println(ce.exibirInfo());
-		
+
 		
 		ContaPremium cp = new ContaPremium("Bianca Andrade Handan", "111.222.333-44", 7171, 100.0, 200.0, 0.0);
 		
@@ -56,6 +56,8 @@ public class Banco {
 		} else {
 			System.out.println("C é genérico.");
 		}
+		
+		
 	}
 
 }

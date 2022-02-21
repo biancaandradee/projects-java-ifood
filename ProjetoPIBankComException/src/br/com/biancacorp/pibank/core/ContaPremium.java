@@ -1,5 +1,7 @@
 package br.com.biancacorp.pibank.core;
 
+import br.com.biancacorp.pibank.cor.exceptions.ContaException;
+
 public class ContaPremium extends ContaEspecial {
 
 	protected double milhas;
@@ -18,7 +20,10 @@ public class ContaPremium extends ContaEspecial {
 	}
 	
 	@Override
-	public boolean debitar(double valor){
+	public boolean debitar(double valor) throws ContaException{
+		if (valor <= 0) {
+			throw new ContaException("Valor inválido para débito!", valor);
+		}
 		//Versão mais curta
 		if (super.debitar(valor)) {        //Ou if (super.saldo + super.limite >= valor)
 			this.milhas += valor / 100;    //         super.saldo -= valor;

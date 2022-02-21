@@ -1,5 +1,7 @@
 package br.com.biancacorp.pibank.core;
 
+import br.com.biancacorp.pibank.cor.exceptions.ContaException;
+
 public class Conta  {
 	
 	protected String nomeTitular;
@@ -43,7 +45,10 @@ public class Conta  {
 		return saldo;
 	}
 	
-	public boolean debitar(double valor){
+	public boolean debitar(double valor) throws ContaException{
+		if (valor <= 0) {
+			throw new ContaException("Valor inválido para débito!", valor);
+		}
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
 			System.out.println("Débito realizado com sucesso!\n");
@@ -53,7 +58,10 @@ public class Conta  {
 		return false;
 	}
 	
-	public void creditar(double valor){
+	public void creditar(double valor) throws ContaException{
+		if (valor <= 0) {
+			throw new ContaException("Valor inválido para crédito: ", valor);
+		}
 		this.saldo += valor;
 	}
 	

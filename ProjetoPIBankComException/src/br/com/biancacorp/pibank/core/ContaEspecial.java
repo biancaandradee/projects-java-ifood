@@ -1,5 +1,7 @@
 package br.com.biancacorp.pibank.core;
 
+import br.com.biancacorp.pibank.cor.exceptions.ContaException;
+
 public class ContaEspecial extends Conta {
 
 	double limite;
@@ -18,8 +20,10 @@ public class ContaEspecial extends Conta {
 	}
 	
 	@Override
-	public boolean debitar(double valor){
-
+	public boolean debitar(double valor) throws ContaException {
+		if (valor <= 0) {
+			throw new ContaException("Valor inválido para débito!", valor);
+		}
 		if (super.saldo + this.limite >= valor) {
 			super.saldo -= valor;
 			System.out.println("Débito realizado com sucesso!\n");
