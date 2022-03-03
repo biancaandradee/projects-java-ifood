@@ -12,7 +12,7 @@ public class Contador {
 		String[] palavras = original.split(" ");
 
 		for (String palavra : palavras) {
-			if (mapa.get(palavra) != null) { // Ele já existe no mapa
+			if (mapa.get(palavra) != null) {          // Verificar se ele já existe no mapa
 				mapa.replace(palavra, mapa.get(palavra) + 1);
 			} else {
 				mapa.put(palavra, 1);
@@ -20,7 +20,7 @@ public class Contador {
 
 		}
 		
-		for(HashMap.Entry<String, Integer> valor : mapa.entrySet()) {
+		for(HashMap.Entry <String, Integer> valor : mapa.entrySet()) {      //Saída mais personalizada
 			System.out.println(valor.getKey() + " - " + valor.getValue());
 		}
 
